@@ -7,7 +7,7 @@ import Manga from "./pages/Manga";
 import Topcharacters from "./pages/Topcharacters";
 import Topmanga from "./pages/Topmanga";
 import Topreviews from "./pages/Topreviews";
-import AnimeDetails from "./pages/AnimeDetails";
+import AnimeDetails from "./pages/components/AnimeDetails";
 // import AnimeDetails from "./pages/animedetails";
 function App() {
   return (

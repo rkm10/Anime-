@@ -1,14 +1,16 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import AnimeList from './AnimeList';
+import AnimeList from './components/AnimeList';
 
-export default function Manga() {
+export default function Topcharacters() {
+
+
       const [apiData, setapiData] = useState(null);
       let [pending, setpending] = useState(true);
       let [error, setError] = useState(null);
 
       useEffect(() => {
-            fetch('https://api.jikan.moe/v4/manga')
+            fetch('https://api.jikan.moe/v4/top/characters')
 
                   .then((response) => {
                         if (response.ok === false) {
@@ -35,9 +37,6 @@ export default function Manga() {
 
 
 
-
-
-
-
+// have to modify this to get proper output
 
 

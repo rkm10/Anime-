@@ -1,16 +1,15 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import AnimeList from './AnimeList';
+import ReviewList from './components/RevieList';
 
-export default function Topcharacters() {
-
+export default function Topreviews() {
 
       const [apiData, setapiData] = useState(null);
       let [pending, setpending] = useState(true);
       let [error, setError] = useState(null);
 
       useEffect(() => {
-            fetch('https://api.jikan.moe/v4/top/characters')
+            fetch('https://api.jikan.moe/v4/top/reviews')
 
                   .then((response) => {
                         if (response.ok === false) {
@@ -21,6 +20,7 @@ export default function Topcharacters() {
                   .then((datas) => { setapiData(datas.data); setpending(false) })
                   .catch((err) => { setError(err.message) })
       }, []);
+      console.log(apiData);
 
       return (
             <>
@@ -28,15 +28,19 @@ export default function Topcharacters() {
                   {pending && <div className="spinner"> </div>}
                   {apiData && <div className="Recommendations">
                         <div className='flex flex-wrap justify-center'>
-                              <AnimeList apiData={apiData} />
+                              <ReviewList apiData={apiData} />
                         </div>
                   </div>}
             </>
       );
 }
-
-
-
 // have to modify this to get proper output
+
+
+
+
+
+
+
 
 

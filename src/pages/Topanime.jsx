@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import AnimeList from './AnimeList';
+import AnimeList from './components/AnimeList';
 
 export default function Topanime() {
 
@@ -25,7 +25,7 @@ export default function Topanime() {
       return (
             <>
                   {error && <h1>{error}</h1>}
-                  {pending && <div className="spinner"> </div>}
+                  {pending && <div className="top-anime-loader"> </div>}
                   {apiData && <div className="Recommendations">
                         <div className='flex flex-wrap justify-center'>
                               <AnimeList apiData={apiData} />
